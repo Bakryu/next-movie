@@ -3,7 +3,7 @@ import BaseApp from 'next/app'
 import client from '../client'
 // import 'normalize.css'
 import '../styles/shared.module.css'
-import '../styles/layout.css'
+
 
 const siteConfigQuery = `
   *[_id == "global-config"] {
@@ -21,11 +21,11 @@ const siteConfigQuery = `
   `
 
 class App extends BaseApp {
-  static async getInitialProps ({Component, ctx}) {
+  static async getStaticProps ({Component, ctx}) {
     let pageProps = {}
 
-    if (Component.getInitialProps) {
-      pageProps = await Component.getInitialProps(ctx)
+    if (Component.getStaticProps) {
+      pageProps = await Component.getStaticProps(ctx)
     }
 
     // Add site config from sanity

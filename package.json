@@ -16,5 +16,8 @@
   "devDependencies": {
     "@sanity/cli": "^2.0.0",
     "lerna": "^3.9.0"
+  },
+  "dependencies": {
+    "sass": "^1.37.5"
   }
 }
