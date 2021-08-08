@@ -7,8 +7,8 @@ import HomePageContent from '@/scenes/HomePageContent'
 
 const HomePage = ({hero, partners, pathways, services, config, formQuery}) => {
   return (
-    <MainContainer config={config} connectWithUsForm={formQuery}>
-      <HomePageContent hero={hero} partners={partners} pathways={pathways} services={services} />
+    <MainContainer config={config}>
+      {/* <HomePageContent hero={hero} partners={partners} pathways={pathways} services={services} /> */}
     </MainContainer>
   )
 }

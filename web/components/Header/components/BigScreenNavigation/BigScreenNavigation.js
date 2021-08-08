@@ -4,13 +4,12 @@ import NextImage from '@/components/NextImage'
 
 import styles from './bigScreenNavigation.module.scss'
 
-const BigScreenNavigation = ({logo, navigationItems, children}) => {
+const BigScreenNavigation = ({logo, navigationItems}) => {
   const {slug, logoImageMain, alt} = logo
   return (
     <>
-      {children}
       <div className={styles.bigScreen}>
-        <Link href={slug}>
+        <Link href="/">
           <a className={styles.logoWrapper}>
             <div className={styles.logo}>
               <NextImage link={logoImageMain} alt={alt} />

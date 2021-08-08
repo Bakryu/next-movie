@@ -1,11 +1,11 @@
-import CATEGORIES from '../../constants/CATEGORIES'
+
 export default {
-  name: 'postCategoriesType',
+  name: 'postCategoriesGenres',
   type: 'document',
-  title: 'Type Item',
+  title: 'Genres Item',
 
   initialValue: {
-    groupName: CATEGORIES.TYPE
+    groupName: 'Genres'
   },
   fields: [
     {

@@ -12,28 +12,6 @@ const siteConfigQuery = `
       "slug":link->page->pageSlug
       
     },
-    blackNavigation,
-    terms{
-      ...,
-      privacyPolicy{
-        name,
-        "link":link->link,
-        "slug":link->page->pageSlug
-      },
-      termsOfUse{
-        name,
-        "link":link->link,
-        "slug":link->page->pageSlug
-      },
-
-    },
-    
-    ownGrowTransitionNavigation[]{
-      name,
-      "link":link->link,
-      "slug":link->page->pageSlug
-    },
-    
     mainNavigation{group[]{
       name,
       groupBoxName,
@@ -41,27 +19,12 @@ const siteConfigQuery = `
         name,
         "link":link->link,
         "slug":link->page->pageSlug
-      
     },
       "link":link->link,
       "slug":link->page->pageSlug
   }},
-    footerNavigation{
-      firstColumn{group[]{
-        name,
-        "link":link->link,
-        "slug":link->page->pageSlug
-    }},
-      secondColumn{group[]{
-        name,
-        "link":link->link,
-        "slug":link->page->pageSlug}}
-    }
+   
   }[0]
-  `
-
-const siteFormQuery = `
-  *[_type == "formList"][0]
   `
 
 class App extends BaseApp {
@@ -75,12 +38,8 @@ class App extends BaseApp {
       const config = await client.fetch(siteConfigQuery).then((config) => {
         return config
       })
-      const formQuery = await client.fetch(siteFormQuery).then((form) => {
-        return form
-      })
 
-      pageProps.config = {...config, ...formQuery}
-      pageProps.formQuery = formQuery.connectWithUsForm
+      pageProps.config = {...config}
 
       return {pageProps}
     }

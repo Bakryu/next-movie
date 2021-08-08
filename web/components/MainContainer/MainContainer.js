@@ -4,8 +4,8 @@ import ConnectForm from '../forms/ConnectForm'
 import Header from '../Header'
 
 const MainContainer = (props) => {
-  const {children, config, connectWithUsForm} = props
-  const {mainNavigation, footerNavigation, contacts, terms, logo, buttons, blackNavigation} = config
+  const {children, config} = props
+  const {mainNavigation, logo} = config
 
   return (
     <>
@@ -25,20 +25,8 @@ const MainContainer = (props) => {
 
         {/* <title>{title}</title> */}
       </Head>
-      <Header
-        navigationList={mainNavigation.group}
-        logo={logo}
-        blackNavigation={blackNavigation}
-        contacts={contacts}
-      />
+      <Header navigationList={mainNavigation.group} logo={logo} />
       {children}
-      <ConnectForm
-        connectWithUsForm={connectWithUsForm}
-        buttons={buttons}
-        privacyPolicy={terms.privacyPolicy}
-        termsOfUse={terms.termsOfUse}
-      />
-      <Footer footerNavigation={footerNavigation} contacts={contacts} terms={terms} logo={logo} />
     </>
   )
 }

@@ -1,7 +1,7 @@
 export default {
-  name: 'postPage',
+  name: 'moviePage',
   type: 'document',
-  title: 'Post page',
+  title: 'Movie page',
   fields: [
     {
       name: 'pageSlug',
@@ -9,35 +9,38 @@ export default {
       title: 'Slug'
     },
     {
-      name: 'title',
+      name: 'name',
       type: 'string',
-      title: 'Title'
+      title: 'Name'
     },
     {
-      name: 'timeToRead',
+      name: 'description',
       type: 'string',
-      title: 'Time to Read',
-      description: 'Enter the time in this format (8 min read)'
+      title: 'description'
     },
     {
-      name: 'releaseDate',
+      name: 'duration',
       type: 'string',
-      title: 'Release date',
-      description: 'Enter the date in this format (Jun 3)'
+      title: 'Duration'
     },
-    { name: 'bodyPortableText', type: 'bodyPortableText' },
+    {
+      name: 'fees',
+      type: 'string',
+      title: 'fees'
+    },
+    {
+      name: 'trailer',
+      type: 'string',
+      title: 'Trailer url'
+    },
+
     {
       name: 'recommendation',
       type: 'array',
       title: 'Recommendation',
-      validation: (Rule) => Rule.required().max(3),
-      of: [{ name: 'post', type: 'reference', to: [{ type: 'postPage' }] }]
+      of: [{ name: 'post', type: 'reference', to: [{ type: 'moviePage' }] }]
     },
-    {
-      name: 'previewGroupTitle',
-      type: 'string',
-      title: 'Preview Group Title'
-    },
+
     {
       name: 'postPreview',
       type: 'postPreview',
@@ -49,29 +52,48 @@ export default {
       title: 'Post Categories',
       fields: [
         {
-          name: 'type',
+          name: 'postType',
           type: 'reference',
-          title: 'Type Post',
-          to: [{ type: 'postCategoriesType' }]
+          title: 'post Type',
+          to: [{ type: 'postType' }]
         },
         {
-          name: 'topic',
+          name: 'genres',
           type: 'reference',
-          title: 'Topic Post',
-          to: [{ type: 'postCategoriesTopic' }]
+          title: 'Genres Post',
+          to: [{ type: 'postCategoriesGenres' }]
         },
         {
-          name: 'industry',
+          name: 'date',
           type: 'reference',
-          title: 'Industry Post',
-          to: [{ type: 'postCategoriesIndustry' }]
+          title: 'Date Post',
+          to: [{ type: 'postCategoriesDate' }]
+        },
+        {
+          name: 'country',
+          type: 'reference',
+          title: 'country Post',
+          to: [{ type: 'postCategoriesCountry' }]
+        }
+      ]
+    },
+    {
+      name: 'actorReference',
+      type: 'array',
+      title: 'actors',
+      of: [
+        {
+          name: 'actor',
+          type: 'reference',
+          title: 'actors',
+          to: [{ type: 'actors' }]
         }
       ]
     }
   ],
   preview: {
     select: {
-      title: 'title'
+      title: 'name'
     }
   }
 }

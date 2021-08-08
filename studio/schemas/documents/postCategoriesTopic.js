@@ -1,10 +1,9 @@
-import CATEGORIES from '../../constants/CATEGORIES'
 export default {
-  name: 'postCategoriesTopic',
+  name: 'postCategoriesDate',
   type: 'document',
-  title: 'Type Item',
+  title: 'date Item',
   initialValue: {
-    groupName: CATEGORIES.TOPIC
+    groupName: 'date'
   },
   fields: [
     {

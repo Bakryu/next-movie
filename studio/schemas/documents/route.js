@@ -19,42 +19,6 @@ export default {
       to: [
         {
           type: 'homePage'
-        },
-        {
-          type: 'termsOfUsePage'
-        },
-        {
-          type: 'privacyPolicyPage'
-        },
-        {
-          type: 'availableMarketsPage'
-        },
-        {
-          type: 'blogPage'
-        },
-        {
-          type: 'commercialFlooringPage'
-        },
-        {
-          type: 'faqPage'
-        },
-        {
-          type: 'growPage'
-        },
-        {
-          type: 'ownPage'
-        },
-        {
-          type: 'processPage'
-        },
-        {
-          type: 'testimonialsPage'
-        },
-        {
-          type: 'transitionPage'
-        },
-        {
-          type: 'initialFeesPage'
         }
       ]
     },

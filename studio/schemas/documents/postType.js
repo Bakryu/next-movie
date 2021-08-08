@@ -1,11 +1,8 @@
-
 export default {
-  name: 'postCategoriesCountry',
+  name: 'postType',
   type: 'document',
-  title: 'country Item',
-  initialValue: {
-    groupName: 'country'
-  },
+  title: 'Type Item',
+
   fields: [
     {
       name: 'groupName',

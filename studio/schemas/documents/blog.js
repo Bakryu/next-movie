@@ -24,12 +24,7 @@ export default {
       type: 'string',
       title: 'Description'
     },
-    {
-      name: 'mainCard',
-      type: 'reference',
-      title: 'Main Post',
-      to: [{ type: 'postPage' }]
-    },
+
     {
       name: 'badSearch',
       type: 'string',

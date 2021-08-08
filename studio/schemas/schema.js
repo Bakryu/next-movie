@@ -2,27 +2,16 @@
 // Document types
 import pagesList from './documents/pages'
 import route from './documents/route'
-import forms from './documents/forms'
 import siteConfig from './documents/siteConfig'
 import homepage from './documents/homepage'
-import testimonials from './documents/testimonials'
-import privacyPolicyPage from './documents/privacyPolicyPage'
-import termsOfUsePage from './documents/termsOfUsePage'
-
-import availableMarkets from './documents/availableMarkets'
 import blog from './documents/blog'
-import commercialFlooring from './documents/commercialFlooring'
-import faq from './documents/faq'
-import grow from './documents/grow'
-import own from './documents/own'
-import process from './documents/process'
-import transition from './documents/transition'
-import initialFees from './documents/initialFees'
 import page404 from './documents/page404'
 import post from './documents/post'
 import postCategoriesType from './documents/postCategoriesType'
 import postCategoriesTopic from './documents/postCategoriesTopic'
 import postCategoriesIndustry from './documents/postCategoriesIndustry'
+import postType from './documents/postType'
+import actors from './documents/actors'
 
 // Object types
 import embedHTML from './objects/embedHTML'
@@ -36,7 +25,6 @@ import servicesItem from './objects/homePage/object/servicesItem'
 import blackNavigation from './objects/blackNavigation'
 import ownGrowTransitionPage from './objects/ownGrowTransitionPage/ownGrowTransitionPage'
 import video from './objects/video'
-import bodyPortableText from './objects/bodyPortableText'
 import postPreview from './objects/postPreview'
 
 //  page sections
@@ -60,27 +48,17 @@ export default createSchema({
     route,
     siteConfig,
     pagesList,
-    forms,
 
     // pages
     homepage,
-    testimonials,
-    privacyPolicyPage,
-    termsOfUsePage,
-    availableMarkets,
     blog,
-    commercialFlooring,
-    faq,
-    own,
-    grow,
-    transition,
-    process,
-    initialFees,
     page404,
     post,
     postCategoriesType,
     postCategoriesTopic,
     postCategoriesIndustry,
+    actors,
+    postType,
 
     // page elements
     homeHero,
@@ -100,7 +78,6 @@ export default createSchema({
     navigationGroup,
     blackNavigation,
     video,
-    bodyPortableText,
     postPreview
   ])
 })
