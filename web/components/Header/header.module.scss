@@ -1,0 +1,80 @@
+@import "@/styles/variables/all.scss";
+
+.listWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: auto;
+  background: $black-color;
+  @media (min-width: $md) {
+    padding: 34px 0 19px;
+    flex-direction: row;
+    background: $white-color;
+  }
+}
+
+.listItem {
+  @media (min-width: $md) {
+    margin-left: 6px;
+  }
+  @media (min-width: $lg) {
+    margin-left: 10px;
+  }
+  @media (min-width: $xl) {
+    margin-left: 14px;
+  }
+  @media (min-width: 1280px) {
+    margin-left: 24px;
+  }
+}
+.listItem {
+  position: relative;
+  padding: 20px 0 22px;
+  display: flex;
+  font-weight: bold;
+  font-size: $font-size-sm;
+  line-height: 108%;
+  align-items: center;
+  list-style-type: none;
+  text-transform: uppercase;
+  border-top: 1px solid rgba($light-gray-color, 0.5);
+
+  .name {
+    color: $light-gray-color;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  @media (min-width: $md) {
+    padding: 0;
+    font-weight: 600;
+    font-size: $font-size-es;
+    line-height: 150%;
+    border-top: none;
+    .name {
+      color: rgba($black-color, 0.5);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    &:hover {
+      .name {
+        color: $black-color;
+      }
+    }
+  }
+
+  @media (min-width: 920px) {
+    font-size: $font-size-s;
+  }
+  @media (min-width: $lg) {
+    font-size: 11px;
+  }
+
+  @media (min-width: $xl) {
+    font-size: $font-size-xs;
+  }
+  @media (min-width: 1280px) {
+    font-size: $font-size-sm;
+  }
+}

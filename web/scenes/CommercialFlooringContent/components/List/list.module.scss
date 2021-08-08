@@ -1,0 +1,169 @@
+@import "@/styles/variables/all.scss";
+
+.list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+
+    :nth-child(3n + 1) {
+        .imageWrapper {
+            background-color: $yellow-color;
+        }
+        .mainImage {
+            left: 16px;
+            bottom: 16px;
+
+            @media (min-width: $md) {
+                left: 32px;
+                bottom: 32px;
+            }
+        }
+    }
+    :nth-child(3n + 2) {
+        .imageWrapper {
+            margin-right: 0;
+            margin-left: 17px;
+            background-color: $red-color;
+        }
+        .mainImage {
+            left: -16px;
+            bottom: -16px;
+
+            @media (min-width: $md) {
+                left: -32px;
+                bottom: -32px;
+            }
+        }
+        .secondaryImage {
+            left: auto;
+            right: -8px;
+
+            @media (min-width: $md) {
+                right: -32px;
+            }
+        }
+
+        @media (min-width: $lg) {
+            flex-direction: row-reverse;
+        }
+    }
+    :nth-child(3n + 3) {
+        .imageWrapper {
+            background-color: $green-color;
+        }
+
+        .mainImage {
+            left: 16px;
+            bottom: -16px;
+
+            @media (min-width: $md) {
+                left: 32px;
+                bottom: -32px;
+            }
+        }
+    }
+
+    :last-child {
+        .descriptionWrapper {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+
+    @media (min-width: $lg) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-bottom: 120px;
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}
+
+.imageWrapper {
+    position: relative;
+    margin-right: 17px;
+    @media (min-width: $lg) {
+        width: 46%;
+    }
+}
+
+.mainImage {
+    position: relative;
+}
+
+.secondaryImage {
+    position: absolute;
+    width: 60vw;
+    left: -8px;
+    bottom: -116px;
+
+    @media (min-width: $md) {
+        left: -32px;
+        bottom: -163px;
+        width: 40vw;
+    }
+    @media (min-width: $lg) {
+        left: -32px;
+        bottom: -163px;
+        width: 26vw;
+    }
+
+    @media (min-width: 1600px) {
+        max-width: 420px;
+    }
+}
+
+.secondaryMargin {
+    margin-bottom: 36vw;
+
+    @media (min-width: $sm) {
+        margin-bottom: 18vw;
+    }
+
+    @media (min-width: $md) {
+        margin-bottom: 16vw;
+    }
+
+    @media (min-width: $lg) {
+        margin-bottom: 14vw;
+    }
+
+    @media (min-width: 1600px) {
+        margin-bottom: 230px;
+    }
+}
+
+.descriptionWrapper {
+    margin: 40px 0 80px;
+    text-align: left;
+
+    @media (min-width: $lg) {
+        margin-top: 0;
+        max-width: 45%;
+    }
+}
+
+.title {
+    font-weight: bold;
+    font-size: $font-size-lg;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.description {
+    margin-top: 20px;
+    font-size: $font-size-sm;
+    line-height: 178%;
+
+    @media (min-width: $lg) {
+        font-size: $font-size-md;
+        line-height: 150%;
+    }
+}

@@ -3,7 +3,7 @@ module.exports = {
   parser: 'babel-eslint',
   rules: {
     'react/prop-types': 0,
-    'object-curly-spacing': ['error', 'never']
+    'space-before-function-paren': ['error', 'never']
   },
   settings: {
     react: {

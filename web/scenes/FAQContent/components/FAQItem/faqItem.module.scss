@@ -1,0 +1,49 @@
+@import "@/styles/variables/all.scss";
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 27px;
+    transition: 0.3s;
+
+    &:nth-child(3n -1) h2 {
+        background-color: $yellow-color;
+    }
+    &:nth-child(3n + 0) h2 {
+        background-color: $red-color;
+    }
+    &:nth-child(3n + 1) h2 {
+        background-color: $green-color;
+    }
+
+    @media (min-width: $md) {
+        margin-bottom: 80px;
+        flex-direction: row;
+    }
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 43px;
+    padding: 24px;
+    font-weight: bold;
+    font-size: $font-size-md;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $white-dim-color;
+    height: 100%;
+
+    @media (min-width: $md) {
+        padding: 32px;
+        margin-bottom: 0;
+        height: auto;
+        max-width: 223px;
+    }
+}
+
+.listWrapper {
+    width: 100%;
+}

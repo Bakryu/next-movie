@@ -1,19 +1,20 @@
-import React from 'react'
 import Document, {Html, Head, Main, NextScript} from 'next/document'
-import client from '../client'
 
-export default class MyDocument extends Document {
-  static async getStaticProps (ctx) {
-    const initialProps = await Document.getStaticProps(ctx)
-    return client.fetch('*[_id == "global-config"] {lang}.lang[0]').then(lang => {
-      return {...initialProps, lang}
-    })
+class MyDocument extends Document {
+  static async getInitialProps(ctx) {
+    const initialProps = await Document.getInitialProps(ctx)
+    return {...initialProps}
   }
 
-  render () {
+  render() {
     return (
-      <Html lang={this.props.lang || 'en'}>
-        <Head />
+      <Html>
+        <Head>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />
@@ -22,3 +23,5 @@ export default class MyDocument extends Document {
     )
   }
 }
+
+export default MyDocument

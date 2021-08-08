@@ -1,0 +1,45 @@
+@import "@/styles/variables/all.scss";
+
+.commercialFlooring {
+    position: relative;
+    padding-top: 65px;
+    padding-bottom: 24px;
+    color: $black-color;
+    text-align: center;
+
+    @media (min-width: $md) {
+        padding-top: 116px;
+        padding-bottom: 73px;
+    }
+}
+
+.title {
+    font-weight: bold;
+    font-size: $font-size-l;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    @media (min-width: $md) {
+        margin: 0 auto;
+        font-size: $font-size-xxl;
+        line-height: 108%;
+        max-width: 750px;
+        letter-spacing: 0;
+    }
+}
+
+.description {
+    display: block;
+    padding: 25px 0 50px;
+    font-size: $font-size-md;
+    line-height: 150%;
+
+    @media (min-width: $md) {
+        padding: 46px 0 92px;
+        margin: 0 auto;
+        font-size: $font-size-md;
+        line-height: 150%;
+        max-width: 736px;
+    }
+}

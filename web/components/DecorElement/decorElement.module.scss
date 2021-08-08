@@ -1,0 +1,53 @@
+@import "@/styles/variables/all.scss";
+.decor {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+
+  @media (min-width: $md) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.white {
+  background-color: $white-color;
+}
+
+.milk {
+  opacity: 0.5;
+  background-color: $white-color;
+}
+
+.spirit {
+  opacity: 0.2;
+  background-color: $white-color;
+}
+
+.yellow {
+  background-color: $yellow-color;
+}
+
+.black {
+  background-color: $black-color;
+}
+
+.grey {
+  background-color: $grey-color;
+}
+
+.red {
+  background-color: $red-color;
+}
+
+.green {
+  background-color: $green-color;
+}
+
+.brown {
+  background-color: $brown-color;
+}
+
+.dim {
+  background-color: $white-dim-color;
+}

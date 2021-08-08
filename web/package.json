@@ -7,7 +7,7 @@
     "dev": "next",
     "build": "next build && next export && node exportSitemap.js",
     "format": "prettier-eslint --write \"**/*.js\" \"!.next/**\" \"!node_modules/**\" \"!out/**\"",
-    "lint": "eslint .",
+    "lint": "next lint",
     "start": "next start"
   },
   "dependencies": {
@@ -19,6 +19,7 @@
     "eslint-config-next": "^11.0.1",
     "eslint-config-prettier": "^8.3.0",
     "groq": "^2.2.6",
+    "lodash": "^4.17.11",
     "next": "^11.0.1",
     "next-seo": "^4.26.0",
     "postcss": "^8.3.5",

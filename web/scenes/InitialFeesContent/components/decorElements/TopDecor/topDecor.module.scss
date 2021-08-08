@@ -1,0 +1,106 @@
+@import "@/styles/variables/all.scss";
+
+.left {
+    position: absolute;
+    left: 0;
+    top: 322px;
+    width: 20px;
+    height: 20px;
+    z-index: -1;
+
+    :nth-child(1) {
+        top: 0;
+        right: 0;
+    }
+    @media (min-width: $sm) {
+        top: 300px;
+    }
+
+    @media (min-width: $md) {
+        display: none;
+    }
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    top: 22px;
+    width: 40px;
+    height: 60px;
+
+    :nth-child(1) {
+        top: 0;
+        left: 0;
+    }
+    :nth-child(2) {
+        top: 20px;
+        right: 0;
+    }
+    :nth-child(3) {
+        top: 40px;
+        right: 0;
+    }
+
+    @media (min-width: $md) {
+        right: 0;
+        top: 194px;
+        width: 80px;
+        height: 120px;
+
+        :nth-child(1) {
+            top: 0;
+            left: 40px;
+        }
+        :nth-child(2) {
+            top: 40px;
+            left: 40px;
+        }
+        :nth-child(3) {
+            top: 80px;
+            right: 40px;
+        }
+    }
+}
+.middle {
+    position: absolute;
+
+    top: 328px;
+    right: 26px;
+    width: 40px;
+    height: 60px;
+    :nth-child(1) {
+        display: none;
+    }
+    :nth-child(2) {
+        top: 40px;
+        left: 20px;
+    }
+    :nth-child(3) {
+        top: 20px;
+        left: 0;
+    }
+
+    @media (min-width: 475px) {
+        top: 230px;
+    }
+
+    @media (min-width: $md) {
+        left: 0;
+        top: 64px;
+        width: 80px;
+        height: 120px;
+        :nth-child(1) {
+            display: block;
+            top: 0;
+            left: 0;
+        }
+        :nth-child(2) {
+            top: 80px;
+            left: 0;
+        }
+        :nth-child(3) {
+            top: 40px;
+            left: 40px;
+        }
+    }
+}

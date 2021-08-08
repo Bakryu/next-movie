@@ -1,0 +1,2 @@
+import CommercialFlooringContent from './CommercialFlooringContent'
+export default CommercialFlooringContent

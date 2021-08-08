@@ -1,0 +1,7 @@
+const CATEGORIES = {
+  TYPE: 'TYPE',
+  TOPIC: 'TOPIC',
+  INDUSTRY: 'INDUSTRY'
+}
+
+export default CATEGORIES

@@ -1,0 +1,130 @@
+@import "@/styles/variables/all.scss";
+
+.list {
+    position: relative;
+    display: grid;
+    grid-column-gap: 32px;
+    grid-template-columns: 1fr;
+    padding-top: 83px;
+    width: 100%;
+    h3 {
+        color: $green-color;
+    }
+
+    @media (min-width: $md) {
+        grid-template-columns: 1fr 1fr;
+        padding-top: 18px;
+
+        :nth-child(3n + 2) {
+            h3 {
+                color: $yellow-color;
+            }
+        }
+        :nth-child(3n + 1) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+}
+
+.badSearchWrapper {
+    display: none;
+}
+
+.badSearch {
+    .badSearchWrapper {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 121px 0 40px;
+        text-align: center;
+        font-weight: 500;
+        line-height: 108%;
+    }
+    @media (min-width: $md) {
+        padding-top: 340px;
+    }
+}
+
+.buttonWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+
+    span {
+        margin: 0 5px;
+    }
+}
+
+.button {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    color: $black-color;
+    cursor: pointer;
+}
+
+.right {
+    color: rgba($black-color, 0.5);
+}
+
+.activeLeft,
+.activeRight {
+    pointer-events: none;
+    * {
+        pointer-events: none;
+    }
+}
+
+.activeRight {
+    color: inherit;
+}
+
+.button > div {
+    position: relative !important;
+
+    width: 30px;
+}
+
+.right > div {
+    margin-left: 30vw !important;
+    @media (min-width: $md) {
+        margin-left: 15px !important;
+    }
+}
+
+.left > div {
+    margin-right: 30vw !important;
+    transform: rotate(180deg);
+    @media (min-width: $md) {
+        margin-right: 15px !important;
+    }
+}
+
+.activeLeft > div,
+.activeRight > div {
+    opacity: 0.5;
+}
+
+.badSearchTitle {
+    position: relative;
+    font-size: $font-size-lg;
+    div {
+        max-width: 160px;
+        max-height: 160px;
+        margin: 0 auto !important;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+}
+
+.suggestions {
+    margin-top: 135px;
+    font-size: 18px;
+}

@@ -1,0 +1,161 @@
+@import "@/styles/variables/all.scss";
+
+.post {
+    position: relative;
+    padding-top: 65px;
+    color: $black-color;
+    text-align: center;
+    margin-bottom: 20px;
+
+    @media (min-width: $md) {
+        padding-top: 116px;
+        padding-bottom: 34px;
+    }
+}
+
+.title {
+    font-weight: bold;
+    font-size: $font-size-l;
+    line-height: 130%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+
+    @media (min-width: $md) {
+        margin: 0 auto;
+        font-size: $font-size-xxl;
+        line-height: 108%;
+        max-width: 750px;
+        letter-spacing: 0;
+        text-align: left;
+    }
+}
+
+.description {
+    display: block;
+    padding: 25px 0 50px;
+    font-size: $font-size-md;
+    line-height: 150%;
+
+    @media (min-width: $md) {
+        padding: 46px 0 115px;
+        margin: 0 auto;
+        font-size: $font-size-md;
+        line-height: 150%;
+        max-width: 736px;
+    }
+}
+
+.dateWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    max-width: 736px;
+    margin: 24px auto 0;
+    font-size: $font-size-sm;
+    line-height: 160%;
+    color: $grey-color;
+
+    @media (min-width: $md) {
+        margin: 32px auto 0;
+    }
+
+    :first-child {
+        position: relative;
+        padding-right: 30px;
+        &::after {
+            display: block;
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: $grey-color;
+            transform: translate(50%, -50%);
+        }
+    }
+}
+
+.blockContent {
+    max-width: 736px;
+    margin: 0 auto;
+    p {
+        padding-top: 22px;
+        text-align: left;
+        font-size: $font-size-sm;
+        line-height: 150%;
+
+        @media (min-width: $md) {
+            font-size: $font-size-md;
+        }
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        padding: 64px 0 10px;
+
+        @media (min-width: $md) {
+            padding: 80px 0 10px;
+        }
+    }
+    figure {
+        width: 100%;
+        margin: 24px 0;
+        @media (min-width: $md) {
+            margin: 32px 0;
+        }
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    @media (min-width: $md) {
+        flex-direction: row;
+
+        & > div {
+            width: 30%;
+        }
+    }
+
+    :nth-child(3n + 1) {
+        h3 {
+            color: $green-color;
+        }
+    }
+
+    :nth-child(3n + 2) {
+        h3 {
+            color: $red-color;
+        }
+    }
+
+    :nth-child(3n + 3) {
+        h3 {
+            color: $yellow-color;
+        }
+    }
+}
+
+.previewGroupTitle {
+    padding: 80px 0 32px;
+    font-weight: bold;
+    text-align: start;
+    font-size: $font-size-l;
+    line-height: 130%;
+    text-transform: uppercase;
+
+    @media (min-width: $md) {
+        padding: 116px 0 56px;
+        font-size: $font-size-xl;
+        line-height: 108%;
+    }
+}

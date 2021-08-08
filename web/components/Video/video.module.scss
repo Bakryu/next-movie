@@ -1,0 +1,74 @@
+@import "@/styles/variables/all.scss";
+
+.previewWrapper {
+  position: relative;
+  width: 100%;
+}
+.invisible {
+  opacity: 0;
+}
+
+.buttonWrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  z-index: 9;
+  cursor: pointer;
+  transition: 0.1s;
+  &:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+}
+
+.popUpWrapper {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+
+  background-color: rgba($black-color, 0.6);
+  z-index: 1000;
+}
+
+.videoWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90vw;
+  @media (min-width: $md) {
+    width: 72vw;
+  }
+}
+
+.video {
+  width: 100%;
+}
+
+.exitButton {
+  position: absolute;
+  right: -12px;
+  top: -12px;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  z-index: 1;
+  span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 24px;
+    height: 2px;
+    background-color: $light-gray-color;
+  }
+  :nth-child(1) {
+    transform: rotate(45deg);
+  }
+  :nth-child(2) {
+    transform: rotate(-45deg);
+  }
+}

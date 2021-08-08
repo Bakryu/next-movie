@@ -1,0 +1,64 @@
+@import "@/styles/variables/all.scss";
+
+.left {
+    position: absolute;
+    display: none;
+
+    @media (min-width: $md) {
+        display: block;
+        left: 0;
+        top: 166px;
+        width: 40px;
+        height: 80px;
+
+        :nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+
+        :nth-child(2) {
+            bottom: 0;
+            left: 0;
+        }
+    }
+}
+
+.right {
+    position: absolute;
+    right: 0;
+    top: 24px;
+    width: 40px;
+    height: 60px;
+
+    :nth-child(1) {
+        top: 0;
+        left: 0;
+    }
+    :nth-child(2) {
+        top: 20px;
+        right: 0;
+    }
+    :nth-child(3) {
+        top: 40px;
+        right: 0;
+    }
+
+    @media (min-width: $md) {
+        right: 0;
+        top: 0;
+        width: 80px;
+        height: 120px;
+
+        :nth-child(1) {
+            top: 0;
+            left: 0;
+        }
+        :nth-child(2) {
+            top: 40px;
+            right: 0;
+        }
+        :nth-child(3) {
+            display: none;
+        }
+    }
+}

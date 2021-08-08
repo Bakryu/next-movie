@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "Next.js landing pages"
+    "name": "next-movie"
   },
   "api": {
     "projectId": "pfjmj45z",
@@ -16,7 +16,8 @@
     "@sanity/desk-tool",
     "dashboard-widget-structure-menu",
     "dashboard-widget-document-list",
-    "dashboard-widget-netlify"
+    "dashboard-widget-netlify",
+    "mux-input"
   ],
   "parts": [
     {

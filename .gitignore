@@ -7,3 +7,5 @@
 # lerna files
 /lerna-debug.log
 
+# build folder
+dist

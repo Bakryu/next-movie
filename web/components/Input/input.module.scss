@@ -1,0 +1,69 @@
+@import "@/styles/variables/all.scss";
+
+.label {
+    position: relative;
+    display: block;
+    // box-sizing: border-box;
+    margin-bottom: 18px;
+    width: 100%;
+
+    @media (min-width: $md) {
+        margin-bottom: 0;
+    }
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    padding: 10px 16px;
+    outline: none;
+    border: 1px solid rgba($grey-color, 0.5);
+}
+
+.error {
+    position: absolute;
+    display: none;
+    right: 0;
+    bottom: 3px;
+    transform: translateY(100%);
+    padding: 8px 16px;
+    background-color: $red-color;
+    z-index: 1;
+}
+
+.labelError {
+    display: block;
+}
+
+.inputError {
+    display: block;
+    border: 3px solid $red-color;
+}
+
+.errorImage {
+    position: absolute;
+    right: 17px;
+    top: -26px;
+    width: 18px;
+    height: 18px;
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        right: 0;
+        bottom: -23px;
+        width: 100%;
+        height: 100%;
+        transform: rotate(45deg);
+        background-color: $red-color;
+        z-index: -1;
+    }
+}
+
+.errorText {
+    display: block;
+    font-weight: 500;
+    font-size: $font-size-xs;
+    line-height: 150%;
+    color: $white-color;
+}

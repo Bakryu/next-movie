@@ -1,0 +1,72 @@
+@import "@/styles/variables/all.scss";
+.blackNavigation {
+    display: flex;
+    justify-content: space-between;
+    background-color: $black-color;
+
+    @media (max-width: $md) {
+        transform: translate(-5px);
+        padding-bottom: 14px;
+        .contactWrapper {
+            display: none;
+        }
+    }
+
+    @media (min-width: $md) {
+        width: 100vw;
+        position: absolute;
+        top: -33px;
+        right: 0;
+        left: 0;
+        flex-direction: row;
+        padding: 11px 80px;
+        z-index: 2;
+    }
+    @media (min-width: 1600px) {
+        padding-left: calc(50% - 720px) !important;
+        padding-right: calc(50% - 720px) !important;
+    }
+}
+.link,
+.linkText {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: $white-color;
+}
+
+.linkText {
+    color: rgba($white-color, 0.5);
+}
+
+.link {
+    opacity: 0.5;
+    &:hover {
+        opacity: 1;
+    }
+}
+
+.contact {
+    margin-left: 3px;
+    color: $white-color;
+}
+
+.phoneNumber {
+    margin-right: 36px;
+}
+
+.contactWrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.arrow {
+    position: relative;
+    width: 18px;
+    height: 18px;
+}

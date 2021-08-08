@@ -1,0 +1,41 @@
+@import "../../../../styles/variables/all.scss";
+
+.navigation {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    margin: 0 16px;
+    border-bottom: 1px solid $light-gray-color;
+
+    @media (min-width: $md) {
+        justify-content: start;
+        margin: 0;
+        padding: 0 80px;
+    }
+    @media (min-width: 1600px) {
+        padding: 0 calc(50% - 720px);
+    }
+}
+.item {
+    height: 100%;
+    padding-top: 9px;
+    font-weight: bold;
+    font-size: $font-size-s;
+    line-height: 160%;
+    text-transform: uppercase;
+    color: $black-color;
+    opacity: 0.5;
+    text-decoration: none;
+    transform: translateY(1px);
+    &:hover {
+        opacity: 1;
+    }
+    @media (min-width: $md) {
+        margin-right: 36px;
+    }
+}
+.active {
+    opacity: 1;
+    border-bottom: 2px solid $black-color;
+}

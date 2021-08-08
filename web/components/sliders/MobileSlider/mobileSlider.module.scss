@@ -1,0 +1,32 @@
+@import "@/styles/variables/all.scss";
+
+body section .buttons {
+  &::before {
+    content: "";
+    display: block;
+    width: 8px;
+    height: 8px;
+    background: $black-color;
+    opacity: 0.3;
+  }
+}
+
+body section .heroSlider {
+  padding-left: 0;
+  padding-right: 0;
+
+  &::before {
+    top: 42px;
+  }
+}
+body section .serviceSlider {
+  &::before {
+    top: -60px;
+  }
+}
+
+.slick-active {
+  .buttons {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,34 @@
+.container {
+  position: absolute;
+  top: -110px;
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  z-index: 2;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+  div {
+    img {
+      width: 12px !important;
+      height: 12px !important;
+      min-width: 12px !important;
+      min-height: 12px !important;
+    }
+  }
+  &:hover {
+    background: #f5f5f5;
+  }
+  &:active {
+    background: #eeeeee;
+  }
+}
+.previous {
+  right: 120px;
+}
+.next {
+  right: 80px;
+}

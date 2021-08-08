@@ -1,0 +1,140 @@
+@import "../../../../styles/variables/all.scss";
+
+.benefits {
+    position: relative;
+    padding-top: 30px;
+    z-index: 1;
+    @media (min-width: $md) {
+        padding-top: 0;
+    }
+}
+
+.contentWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: translateY(72px);
+    @media (min-width: $md) {
+        transform: translateY(157px);
+    }
+}
+
+.title {
+    font-weight: bold;
+    font-size: $font-size-l;
+    line-height: 130%;
+    text-align: center;
+    text-transform: uppercase;
+    max-width: 736px;
+
+    @media (min-width: $md) {
+        font-size: $font-size-xl;
+        line-height: 108%;
+    }
+}
+
+.description {
+    font-size: $font-size-sm;
+    line-height: 170%;
+    color: $grey-color;
+    padding: 26px 0 40px;
+
+    @media (min-width: $md) {
+        font-size: $font-size-md;
+        line-height: 150%;
+        padding-bottom: 44px;
+    }
+}
+
+.listWrapper {
+    position: relative;
+    padding: 40px 16px;
+    background-color: $light-gray-color;
+    @media (min-width: $md) {
+        transform: translateY(11px);
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 56px 96px;
+        padding-bottom: 16px;
+    }
+}
+
+.itemWrapper {
+    display: flex;
+    &:not(:last-child) {
+        padding-bottom: 10px;
+    }
+
+    @media (min-width: $sm) {
+        &:not(:last-child) {
+            padding-bottom: 20px;
+        }
+    }
+    @media (min-width: $md) {
+        width: 100%;
+        &:not(:last-child) {
+            padding-bottom: 40px;
+        }
+    }
+    @media (min-width: $lg) {
+        width: 48%;
+    }
+}
+
+.itemOrder {
+    margin-right: 18px;
+    font-weight: bold;
+    font-size: $font-size-l;
+    line-height: 130%;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+
+    @media (min-width: $md) {
+        margin-right: 34px;
+        font-size: $font-size-xl;
+        line-height: 108%;
+    }
+}
+
+.itemDescription {
+    font-size: $font-size-sm;
+    line-height: 150%;
+    max-width: 480px;
+
+    @media (min-width: $md) {
+        font-size: $font-size-md;
+    }
+    @media (min-width: $lg) {
+        max-width: 352px;
+    }
+}
+.imageWrapper {
+    position: relative;
+    width: 100%;
+    overflow-x: hidden;
+    z-index: -1;
+
+    @media (min-width: $md) {
+        margin-bottom: 53px;
+    }
+
+    div {
+        img {
+            height: 308px !important;
+            max-height: 440px !important;
+            width: auto !important;
+
+            @media (min-width: $md) {
+                height: auto !important;
+                max-height: 440px !important;
+                width: 100% !important;
+            }
+
+            @media (min-width: $xxl) {
+                max-height: 680px !important;
+            }
+        }
+    }
+}

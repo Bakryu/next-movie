@@ -1,0 +1,31 @@
+@import "@/styles/variables/all.scss";
+
+.bigScreen {
+  display: none;
+  position: relative;
+
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background: $white-color;
+  margin-top: 33px;
+  z-index: 1;
+  @media (min-width: $md) {
+    display: flex;
+  }
+}
+
+.logoWrapper {
+  width: 130px;
+  height: 18px;
+
+  @media (min-width: $lg) {
+    width: 180px;
+    height: 26px;
+  }
+}
+
+.logo {
+  margin-top: 5px;
+  height: 100%;
+}

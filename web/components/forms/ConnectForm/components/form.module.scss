@@ -1,0 +1,56 @@
+@import "@/styles/variables/all.scss";
+.form {
+  display: flex;
+  flex-direction: column;
+  input {
+    height: 42px;
+    padding: 12px 20px;
+    margin-bottom: 16px;
+
+    font-weight: 500;
+    font-size: $font-size-xs;
+    line-height: 150%;
+    text-transform: uppercase;
+    color: rgba($black-color, 0.25);
+    background-color: $white-color;
+    border: none;
+  }
+  button {
+    margin-top: 6px;
+  }
+
+  @media (min-width: $md) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    input {
+      width: 100%;
+    }
+  }
+  @media (min-width: 900px) {
+    :nth-child(3) {
+      width: 48%;
+      min-width: 136px;
+    }
+    :nth-child(4) {
+      width: 48%;
+      min-width: 136px;
+    }
+  }
+}
+.agreements {
+  display: block;
+  margin-top: 12px;
+  font-size: 10px;
+  line-height: 160%;
+
+  @media (min-width: $md) {
+    max-width: 260px;
+  }
+}
+.agreementsLink {
+  text-decoration: none;
+  cursor: pointer;
+  color: $white-color;
+}

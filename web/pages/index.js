@@ -1,21 +1,51 @@
+import client from '../client'
+import groq from 'groq'
 import PropTypes from 'prop-types'
-import React from 'react'
-import Layout from '../components/Layout'
 
-class IndexPage extends React.Component {
-  static propTypes = {
-    config: PropTypes.object
+import MainContainer from '@/components/MainContainer'
+import HomePageContent from '@/scenes/HomePageContent'
+
+const HomePage = ({hero, partners, pathways, services, config, formQuery}) => {
+  return (
+    <MainContainer config={config} connectWithUsForm={formQuery}>
+      <HomePageContent hero={hero} partners={partners} pathways={pathways} services={services} />
+    </MainContainer>
+  )
+}
+
+export async function getStaticProps() {
+  const data = await client
+    .fetch(
+      groq`*[_type == "homePage" ][0]{
+            title,partners, pathways,services,
+            hero{title, subTitle, proposition,
+            propositionList,heroBg,
+            video{videoPoster,
+            "videoUrl": videoUrl.asset->url
+          }
+        }  
+      }`
+    )
+    .then((res) => {
+      return {...res}
+    })
+
+  if (!data) {
+    return {
+      notFound: true
+    }
   }
 
-  render () {
-    const {config} = this.props
-    return (
-      <Layout config={config}>
-        <h1>No route set</h1>
-        <h2>Setup automatic routes in sanity or custom routes in next.config.js</h2>
-      </Layout>
-    )
+  return {
+    props: {...data}
   }
 }
 
-export default IndexPage
+HomePage.propTypes = {
+  title: PropTypes.string,
+  hero: PropTypes.object,
+  partners: PropTypes.object,
+  pathways: PropTypes.object,
+  services: PropTypes.object
+}
+export default HomePage

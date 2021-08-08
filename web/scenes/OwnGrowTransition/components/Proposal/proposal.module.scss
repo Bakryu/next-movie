@@ -1,0 +1,97 @@
+@import "@/styles/variables/all.scss";
+
+.proposal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 120px;
+    padding-bottom: 38px;
+    color: $white-milk-color;
+    background-color: $black-color;
+
+    @media (min-width: $md) {
+        padding-top: 196px;
+        padding-bottom: 84px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    @media (min-width: 1440px) {
+        padding-top: 270px;
+    }
+}
+
+.descriptionWrapper,
+.listWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.title {
+    font-weight: bold;
+    font-size: $font-size-lg;
+    line-height: 130%;
+    text-transform: uppercase;
+    color: $white-color;
+
+    @media (min-width: $md) {
+        font-size: $font-size-xl;
+        line-height: 108%;
+    }
+}
+
+.description {
+    max-width: 544px;
+    padding: 25px 0 35px;
+    font-size: $font-size-sm;
+    line-height: 170%;
+
+    @media (min-width: $md) {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+        padding: 43px 0 40px;
+    }
+}
+
+.listWrapper {
+    padding-top: 67px;
+
+    @media (min-width: $md) {
+        padding-top: 0;
+        margin-left: 10px;
+    }
+    @media (min-width: $xl) {
+        padding-right: 113px;
+    }
+}
+.itemWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 32px;
+    margin-left: 4px;
+    @media (min-width: $md) {
+        margin-bottom: 38px;
+    }
+}
+
+.itemImage {
+    width: 48px;
+    min-width: 48px;
+    height: 48px;
+    margin-right: 32px;
+}
+
+.itemDescription {
+    font-size: $font-size-md;
+    line-height: 170%;
+    @media (min-width: $md) {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 150%;
+    }
+}

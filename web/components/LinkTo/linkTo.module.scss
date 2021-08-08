@@ -1,0 +1,46 @@
+@import "@/styles/variables/all.scss";
+
+.linkName {
+  display: inline-block;
+  margin-right: auto;
+  text-decoration: none;
+  padding-bottom: 6px;
+  border-bottom: 2px solid $yellow-color;
+  font-weight: bold;
+  font-size: $font-size-md;
+  line-height: 150%;
+  text-transform: uppercase;
+  color: $black-color;
+  transition: 0.3s;
+  &:hover {
+    .arrowsWrapper {
+      margin-left: 15px;
+    }
+  }
+  &:active {
+    color: $yellow-color;
+    transition: 0s;
+    svg {
+      path {
+        fill: $yellow-color;
+      }
+    }
+  }
+}
+
+.arrowsWrapper {
+  display: inline-block;
+  position: relative;
+  margin-left: 7px;
+  width: 12px;
+  height: 12px;
+  transition: 0.3s;
+}
+
+.white {
+  color: $white-color;
+  font-size: $font-size-xs;
+  path {
+    fill: $white-color;
+  }
+}

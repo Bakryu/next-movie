@@ -1,4 +1,4 @@
-# Next.js landing pages
+# ko
 
 _SEO friendly page builder in React.js. Heroes, sign-up forms and calls to action._
 

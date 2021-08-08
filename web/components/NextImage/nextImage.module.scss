@@ -1,0 +1,16 @@
+.image {
+   position: relative;
+   div {
+      position: static !important;
+      overflow: auto !important;
+      img {
+         position: static !important;
+         width: 100% !important;
+         height: auto !important;
+         min-width: auto !important;
+         min-height: auto !important;
+         max-width: none !important;
+         max-height: none !important;
+      }
+   }
+}
