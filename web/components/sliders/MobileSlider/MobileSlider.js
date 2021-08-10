@@ -5,7 +5,7 @@ import classNames from 'classnames/bind'
 
 import styles from './mobileSlider.module.scss'
 
-const MobileSlider = ({items, settings, instance, buttonsStyle}) => {
+const MobileSlider = ({children, settings, instance, buttonsStyle}) => {
   const widthSliderItem = 216
   const screenSize = useResize()
   const defaultSettings = {
@@ -20,7 +20,7 @@ const MobileSlider = ({items, settings, instance, buttonsStyle}) => {
     },
     arrows: false,
     dots: true,
-    slidesToShow: (screenSize.width - 50) / widthSliderItem,
+    slidesToShow: 5,
     lazyLoad: true,
     infinite: false,
     speed: 500,
@@ -30,13 +30,13 @@ const MobileSlider = ({items, settings, instance, buttonsStyle}) => {
 
   return (
     <Slick {...defaultSettings} ref={instance}>
-      {items}
+      {children}
     </Slick>
   )
 }
 
 MobileSlider.propTypes = {
-  items: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired,
   settings: PropTypes.object,
   instance: PropTypes.any
 }

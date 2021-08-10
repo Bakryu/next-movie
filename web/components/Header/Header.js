@@ -9,7 +9,7 @@ const Header = ({navigationList, logo}) => {
         {list.map((item, idx) => {
           return (
             <li className={styles.listItem} key={idx}>
-              <Link href="/">
+              <Link href={`/categories/${item.slug}`}>
                 <a className={styles.name}> {item.name}</a>
               </Link>
             </li>

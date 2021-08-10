@@ -1,0 +1,33 @@
+@import '@/styles/variables/all.scss';
+
+.category {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  text-align: center;
+}
+
+.title {
+  font-weight: bold;
+  font-size: $font-size-l;
+  line-height: 108%;
+  text-transform: uppercase;
+  margin-bottom: 34px;
+
+  @media (min-width: $md) {
+    line-height: 130%;
+    margin-bottom: 5px;
+  }
+  @media (min-width: $lg) {
+    font-size: $font-size-xl;
+  }
+}
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}

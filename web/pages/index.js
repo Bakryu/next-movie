@@ -5,10 +5,10 @@ import PropTypes from 'prop-types'
 import MainContainer from '@/components/MainContainer'
 import HomePageContent from '@/scenes/HomePageContent'
 
-const HomePage = ({hero, partners, pathways, services, config, formQuery}) => {
+const HomePage = ({config, movies, types}) => {
   return (
     <MainContainer config={config}>
-      {/* <HomePageContent hero={hero} partners={partners} pathways={pathways} services={services} /> */}
+      <HomePageContent movies={movies} types={types} />
     </MainContainer>
   )
 }
@@ -16,15 +16,19 @@ const HomePage = ({hero, partners, pathways, services, config, formQuery}) => {
 export async function getStaticProps() {
   const data = await client
     .fetch(
-      groq`*[_type == "homePage" ][0]{
-            title,partners, pathways,services,
-            hero{title, subTitle, proposition,
-            propositionList,heroBg,
-            video{videoPoster,
-            "videoUrl": videoUrl.asset->url
-          }
-        }  
-      }`
+      groq`{"movies":*[_type == "moviePage" ][]{
+        pageSlug,
+        name,
+        "image":postPreview.image.asset,
+        "alt":postPreview.image.alt,
+        "type":postReference.postType->groupName,
+        "itemName":postReference.genres->itemName,
+      },
+      "types":*[_type == "postType" ][]{
+        groupName,
+        itemName
+      } 
+    }`
     )
     .then((res) => {
       return {...res}
@@ -43,9 +47,7 @@ export async function getStaticProps() {
 
 HomePage.propTypes = {
   title: PropTypes.string,
-  hero: PropTypes.object,
-  partners: PropTypes.object,
-  pathways: PropTypes.object,
-  services: PropTypes.object
+  types: PropTypes.array,
+  movies: PropTypes.array
 }
 export default HomePage

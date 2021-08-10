@@ -1,6 +1,4 @@
 import Head from 'next/head'
-import Footer from '../Footer'
-import ConnectForm from '../forms/ConnectForm'
 import Header from '../Header'
 
 const MainContainer = (props) => {
