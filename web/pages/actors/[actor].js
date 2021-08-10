@@ -19,18 +19,18 @@ const Actor = ({config, alt, image, description, name, pageSlug}) => {
   )
 }
 
-export async function getStaticPaths() {
-  const paths = await client.fetch(groq`*[_type == "actors" ][]{pageSlug}`).then((res) => {
-    return [...res]
-  })
+// export async function getStaticPaths() {
+//   const paths = await client.fetch(groq`*[_type == "actors" ][]{pageSlug}`).then((res) => {
+//     return [...res]
+//   })
 
-  return {
-    paths: paths?.map(({pageSlug}) => ({params: {actor: pageSlug}})),
-    fallback: false
-  }
-}
+//   return {
+//     paths: paths?.map(({pageSlug}) => ({params: {actor: pageSlug}})),
+//     fallback: false
+//   }
+// }
 
-export async function getStaticProps({params}) {
+export async function getServerSideProps({params}) {
   const slug = params.actor
   const data = await client
     .fetch(
