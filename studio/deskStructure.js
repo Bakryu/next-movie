@@ -14,7 +14,7 @@ const hiddenDocTypes = (listItem) =>
     'moviePage',
     'postCategoriesDate',
     'postCategoriesCountry',
-    'postCategoriesDate'
+    'postCategoriesGenres'
   ].includes(listItem.getId())
 
 export default () =>

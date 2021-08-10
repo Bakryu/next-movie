@@ -7,11 +7,9 @@ import styles from './postPreview.module.scss'
 
 const PostPreview = ({
   postPreview,
-  releaseDate,
-  timeToRead,
+ 
   pageSlug,
   imageSize = {width: 288, height: 210},
-  cardStyle,
   category,
   slug
 }) => {

@@ -12,7 +12,7 @@ export default {
     {
       name: 'link',
       type: 'reference',
-      to: [{ type: 'route' }]
+      to: [{ type: 'postType' }]
     }
   ],
   preview: {

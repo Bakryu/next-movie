@@ -12,7 +12,7 @@ const BigScreenNavigation = ({logo, navigationItems}) => {
         <Link href="/">
           <a className={styles.logoWrapper}>
             <div className={styles.logo}>
-              <NextImage link={logoImageMain} alt={alt} />
+              <NextImage link={logoImageMain} alt={alt} width={120} height={50} />
             </div>
           </a>
         </Link>

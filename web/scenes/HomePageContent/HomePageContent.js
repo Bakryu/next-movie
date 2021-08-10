@@ -1,25 +1,23 @@
 import PropTypes from 'prop-types'
 
-import Hero from './components/Hero'
-import Partners from './components/Partners'
-import PathWay from './components/PathWay'
-import Services from './components/Services'
-
-const HomePageContent = ({hero, pathways, services, partners}) => {
-  return (
-    <>
-      <Hero hero={hero} />
-      <PathWay pathways={pathways} />
-      <Services services={services} />
-      <Partners partners={partners} />
-    </>
-  )
+import Category from './components/Category'
+import styles from './homePageContent.module.scss'
+const HomePageContent = ({movies, types}) => {
+  const typesList = types.map(({groupName, itemName}, idx) => {
+    return (
+      <div className={styles.category} key={idx}>
+        <h2 className={styles.title}>{itemName}</h2>
+        <div className={styles.sliderWrapper}>
+          <Category movies={movies} groupName={groupName} />
+        </div>
+      </div>
+    )
+  })
+  return <section className={styles.content}>{typesList}</section>
 }
 
 HomePageContent.propTypes = {
-  hero: PropTypes.object,
-  pathways: PropTypes.object,
-  services: PropTypes.object,
-  partners: PropTypes.object
+  movies: PropTypes.array,
+  types: PropTypes.array
 }
 export default HomePageContent

@@ -15,14 +15,9 @@ const siteConfigQuery = `
     mainNavigation{group[]{
       name,
       groupBoxName,
-      groupList[]{
-        name,
-        "link":link->link,
-        "slug":link->page->pageSlug
-    },
-      "link":link->link,
-      "slug":link->page->pageSlug
-  }},
+      "slug":link->groupName
+    }
+  },
    
   }[0]
   `

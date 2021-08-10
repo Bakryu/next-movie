@@ -3,7 +3,7 @@ import groq from 'groq'
 import PropTypes from 'prop-types'
 
 import MainContainer from '@/components/MainContainer'
-import BlogContent from '@/scenes/BlogContent'
+import BlogContent from '@/scenes/CategoryContent'
 
 const Blog = ({config, formQuery, filter, posts, blog}) => {
   return (

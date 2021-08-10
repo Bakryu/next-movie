@@ -5,21 +5,21 @@ import PropTypes from 'prop-types'
 import MainContainer from '@/components/MainContainer'
 import CategoryContent from '@/scenes/CategoryContent'
 
-const Category = ({config, category}) => {
+const Category = ({config, category, movies}) => {
   return (
     <MainContainer config={config}>
-      <CategoryContent category={category} />
+      <CategoryContent category={category} movies={movies} />
     </MainContainer>
   )
 }
 
 export async function getStaticPaths() {
-  const paths = await client.fetch(groq`*[_type == "category" ][]{pageSlug}`).then((res) => {
+  const paths = await client.fetch(groq`*[_type == "postType"][]{groupName}`).then((res) => {
     return [...res]
   })
 
   return {
-    paths: paths?.map(({pageSlug}) => ({params: {category: pageSlug}})),
+    paths: paths?.map(({groupName}) => ({params: {category: groupName}})),
     fallback: false
   }
 }
@@ -28,52 +28,17 @@ export async function getStaticProps({params}) {
   const slug = params.category
   const data = await client
     .fetch(
-      groq`{"category": *[_type == "postPage" ][]{
-
-        pageSlug,
-        postPreview,
-        releaseDate,
-        timeToRead,
-        postReference{
-          topic->{itemName},
-          type->{itemName},
-          industry->{itemName},
-         },
-     
-          'filter': *[_type == 'postCategoriesType' ][]{
-            ...,
-          }
+      groq`{"category": *[_type == "postType" && groupName == "${slug}" ][0]{
+        itemName,
+        groupName
        
     },
-    "blog":*[_type == 'blogPage'][0]{
+    "movies":*[_type == 'moviePage' && postReference.postType->groupName == "${slug}"][]{
+      name,
       pageSlug,
-      title,
-      suggestions,
-      description,
-      badSearch,
-      mainCard->{
-        pageSlug,
-        postPreview,
-        releaseDate,
-        timeToRead,
-        "category":postReference.topic->itemName
-      }
-  },
-  
-    "filter": {
-      "type" :*[_type == 'postCategoriesType' ][]{
-        groupName,
-        itemName
+      "image":postPreview.image.asset,
+      "alt":postPreview.image.alt,
     },
-      "topic" :*[_type == 'postCategoriesTopic' ][]{
-        groupName,
-        itemName
-    },
-      "industry" :*[_type == 'postCategoriesIndustry' ][]{
-        groupName,
-        itemName
-    },
-  }
   }`
     )
     .then((res) => {
@@ -87,12 +52,7 @@ export async function getStaticProps({params}) {
 
 Category.propTypes = {
   config: PropTypes.object,
-  formQuery: PropTypes.object,
-  bodyPortableText: PropTypes.array,
-  postPreview: PropTypes.object,
-  recommendation: PropTypes.array,
-  releaseDate: PropTypes.string,
-  timeToRead: PropTypes.string
+  movies: PropTypes.array
 }
 
 export default Category

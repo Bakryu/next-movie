@@ -1,4 +1,4 @@
-@import "./variables/all.scss";
+@import './variables/all.scss';
 html,
 * {
   font-family: $font-inter;
@@ -34,4 +34,43 @@ header {
   @media (min-width: $md) {
     height: 79px;
   }
+}
+
+h2 {
+  font-size: 32px;
+  color: $black-color;
+  margin-bottom: 20px;
+}
+h3 {
+  font-size: 16px;
+  color: $black-color;
+  margin-bottom: 10px;
+
+  span,
+  a {
+    font-size: 14px;
+    color: $grey-color;
+    padding-left: 10px;
+
+    text-decoration: none;
+  }
+}
+h4 {
+  font-size: 14px;
+  color: $black-color;
+  margin-bottom: 20px;
+}
+h6 {
+  font-size: 12px;
+  color: $grey-color;
+  margin-bottom: 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-decoration: none;
 }
