@@ -5,7 +5,7 @@ import NextImage from '@/components/NextImage'
 import styles from './bigScreenNavigation.module.scss'
 
 const BigScreenNavigation = ({logo, navigationItems}) => {
-  const {slug, logoImageMain, alt} = logo
+  const {logoImageMain, alt} = logo
   return (
     <>
       <div className={styles.bigScreen}>
