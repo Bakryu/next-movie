@@ -1,13 +1,10 @@
 import PropTypes from 'prop-types'
 import Slick from 'react-slick'
-import useResize from 'use-resizing'
 import classNames from 'classnames/bind'
 
 import styles from './mobileSlider.module.scss'
 
 const MobileSlider = ({children, settings, instance, buttonsStyle}) => {
-  const widthSliderItem = 216
-  const screenSize = useResize()
   const defaultSettings = {
     customPaging: function customDot(i) {
       return (

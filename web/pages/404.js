@@ -3,14 +3,14 @@ import groq from 'groq'
 import PropTypes from 'prop-types'
 import Content404 from '@/scenes/Content404'
 
-const Page404 = ({title, description, image, alt, config}) => {
+const Page404 = ({title, description, image, alt}) => {
   return (
     <Content404
       title={title}
       description={description}
       image={image}
       alt={alt}
-      button={config.buttons.buttonGoToHomePage}
+      button="go to home page"
     />
   )
 }

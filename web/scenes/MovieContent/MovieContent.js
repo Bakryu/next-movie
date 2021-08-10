@@ -13,7 +13,6 @@ const MovieContent = ({
   duration,
   fees,
   name,
-  pageSlug,
   postPreview,
   postReference,
   recommendation,

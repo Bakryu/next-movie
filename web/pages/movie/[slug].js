@@ -12,7 +12,6 @@ const Movie = ({
   duration,
   fees,
   name,
-  pageSlug,
   postPreview,
   postReference,
   recommendation,
@@ -91,7 +90,6 @@ Movie.propTypes = {
   duration: PropTypes.string,
   fees: PropTypes.string,
   name: PropTypes.string,
-  pageSlug: PropTypes.string,
   trailer: PropTypes.string
 }
 
