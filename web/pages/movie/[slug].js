@@ -3,7 +3,7 @@ import groq from 'groq'
 import PropTypes from 'prop-types'
 
 import MainContainer from '@/components/MainContainer'
-import MovieContent from '@/scenes/movieContent'
+import MovieContent from '@/scenes/MovieContent'
 
 const Movie = ({
   config,
