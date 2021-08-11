@@ -19,11 +19,10 @@ const Actor = ({config, alt, image, description, name, pageSlug}) => {
   )
 }
 
-
 export async function getServerSideProps({params}) {
   const slug = params.actor
-  const data = await client
-  .fetch(
+
+  const data = await client.fetch(
     groq`*[_type == "actors" && pageSlug == "${slug}"][0]{
       description,
       name,
@@ -32,34 +31,30 @@ export async function getServerSideProps({params}) {
       "alt": image.alt
     }
     `
-    )
-    .then((res) => {
-      return {...res}
-    })
-    
-    return {
-      props: {...data}
-    }
-  }
-  
-  Actor.propTypes = {
-    config: PropTypes.object,
-    alt: PropTypes.string,
-    image: PropTypes.object,
-    pageSlug: PropTypes.string,
-    name: PropTypes.string,
-    description: PropTypes.string
-  }
-  
-  export default Actor
-  
-  // export async function getStaticPaths() {
-  //   const paths = await client.fetch(groq`*[_type == "actors" ][]{pageSlug}`).then((res) => {
-  //     return [...res]
-  //   })
-  
-  //   return {
-  //     paths: paths?.map(({pageSlug}) => ({params: {actor: pageSlug}})),
-  //     fallback: false
-  //   }
-  // }
+  )
+
+  // Pass data to the page via props
+  return {props: {...data}}
+}
+
+Actor.propTypes = {
+  config: PropTypes.object,
+  alt: PropTypes.string,
+  image: PropTypes.object,
+  pageSlug: PropTypes.string,
+  name: PropTypes.string,
+  description: PropTypes.string
+}
+
+export default Actor
+
+// export async function getStaticPaths() {
+//   const paths = await client.fetch(groq`*[_type == "actors" ][]{pageSlug}`).then((res) => {
+//     return [...res]
+//   })
+
+//   return {
+//     paths: paths?.map(({pageSlug}) => ({params: {actor: pageSlug}})),
+//     fallback: false
+//   }
+// }
